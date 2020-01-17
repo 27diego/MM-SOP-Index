@@ -1,6 +1,5 @@
 import React from "react";
-import "./App.css";
-
+import "./App.scss";
 import history from "./history";
 
 import { Route, Router, Switch } from "react-router-dom";
@@ -23,7 +22,7 @@ function App() {
   return (
     <Router history={history}>
       <Switch>
-        <Route path="/SignIn" exact component={SignIn} />
+        <Route path="/" exact component={SignIn} />
         <Route path="/Dashboard" exact component={Dashboard} />
         <Route path="/Admin" exact component={Admin} />
         <Route path="/Page:id" exact component={sopPage} />
