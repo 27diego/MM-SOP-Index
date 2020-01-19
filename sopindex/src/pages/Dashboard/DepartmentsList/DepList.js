@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./DepList.scss";
+// import { selectDep } from "../../../Redux/actions";
+// import { connect } from "react-redux";
 
 class DepList extends Component {
   state = {
@@ -28,12 +30,7 @@ class DepList extends Component {
         name: "Safety",
         content: "file"
       }
-    ],
-    active: false
-  };
-
-  clickDep = flag => {
-    this.setState({ active: flag });
+    ]
   };
 
   render() {
@@ -44,7 +41,7 @@ class DepList extends Component {
           {this.state.departments.map(department => {
             return (
               <div
-                onClick={() => this.clickDep(true)}
+                onClick={() => this.props.selectDep(department.name)}
                 key={department.name}
                 className="departments__title"
               >
@@ -58,5 +55,7 @@ class DepList extends Component {
     );
   }
 }
+
+// export default connect(null, { selectDep })(DepList);
 
 export default DepList;
