@@ -6,7 +6,7 @@ import { Route, Router, Switch } from "react-router-dom";
 
 //domain pages
 import SignIn from "./pages/SignIn/SignIn";
-import Dashboard from "./pages/Dashboard/Dashboard.js";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import Admin from "./pages/Admin/Admin";
 import sopPage from "./pages/sopPage/sop-page";
 

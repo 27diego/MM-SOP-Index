@@ -1,0 +1,107 @@
+@import "../../Scss/variables";
+
+body {
+  background-image: linear-gradient(to right bottom, $color-one, $color-two);
+}
+
+.signIn {
+  height: 100vh;
+  background: cover center;
+
+  &__header {
+    display: flex;
+    width: 100%;
+
+    &__img {
+      height: 5rem;
+      margin: 1rem 0 0 2rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+      align-self: center;
+      margin-left: auto;
+      margin-right: 2rem;
+
+      &::after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        padding-top: 0.2rem;
+        border-bottom: 0.01rem solid black;
+      }
+    }
+  }
+
+  &__form {
+    margin: 5rem auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 0.3rem;
+    // horizontal vertical blur spread color
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+
+    &__header {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+
+      &:after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        padding-top: 0.5rem;
+        border-bottom: 0.01rem solid black;
+      }
+    }
+
+    &__group {
+    }
+
+    &__input {
+      font-size: 0.8rem;
+      padding: 0.8rem 1.9rem;
+      border-radius: 2px;
+      background-color: rgba($color: white, $alpha: 0.5);
+      //remove wierd looking border
+      border: none;
+    }
+
+    &__label {
+    }
+
+    &__btn {
+      width: 50%;
+      height: 2rem;
+      align-self: center;
+      border-radius: 0.2rem;
+      background-color: $color-three;
+      color: black;
+      font-size: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__req {
+      margin-top: 2rem;
+      display: flex;
+      margin-top: 4rem;
+      justify-content: space-between;
+      text-decoration: underline;
+      font-size: 0.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__footer {
+  }
+}
