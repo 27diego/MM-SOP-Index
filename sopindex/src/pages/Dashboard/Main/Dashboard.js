@@ -2,14 +2,20 @@ import React, { Component } from "react";
 import "./Dashboard.scss";
 import DepList from "../DepartmentsList/DepList";
 import SOPList from "../SOPList/SOPList";
+import Document from "../Document/Document";
 
 class Dashboard extends Component {
   state = {
-    Department: ""
+    Department: "",
+    Doc: ""
   };
 
   selectDep = name => {
     this.setState({ Department: name });
+  };
+
+  selectDocument = doc => {
+    this.setState({ Doc: doc });
   };
 
   //we need three columns
@@ -20,9 +26,14 @@ class Dashboard extends Component {
           <DepList selectDep={this.selectDep} />
         </div>
         <div className="sops">
-          <SOPList Department={this.state.Department} />
+          <SOPList
+            Department={this.state.Department}
+            selectDocument={this.selectDocument}
+          />
         </div>
-        <div className="document">&nbsp;</div>
+        <div className="document">
+          <Document document={this.state.Doc ? this.state.Doc : 1} />
+        </div>
       </div>
     );
   }

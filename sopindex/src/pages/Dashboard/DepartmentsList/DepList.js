@@ -23,7 +23,7 @@ class DepList extends Component {
         content: "file"
       },
       {
-        name: "Mechanic",
+        name: "Maintenance",
         content: "file"
       },
       {
