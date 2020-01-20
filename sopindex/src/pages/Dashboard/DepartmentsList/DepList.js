@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./DepList.scss";
+import history from "../../../history";
 // import { selectDep } from "../../../Redux/actions";
 // import { connect } from "react-redux";
 
@@ -30,7 +31,13 @@ class DepList extends Component {
         name: "Safety",
         content: "file"
       }
-    ]
+    ],
+    active: ""
+  };
+
+  handleClick = name => {
+    this.props.selectDep(name);
+    this.setState({ active: name });
   };
 
   renderList = name => {
@@ -38,9 +45,11 @@ class DepList extends Component {
       case "QA":
         return (
           <div
-            onClick={() => this.props.selectDep(name)}
+            onClick={() => this.handleClick(name)}
             key={name}
-            className="departments__title"
+            className={`departments__title ${
+              this.state.active === name ? "active" : ""
+            }`}
           >
             {/* <img className="departments__img" alt="QA icon" /> */}
             <i class="fas fa-utensils"></i>
@@ -51,9 +60,11 @@ class DepList extends Component {
       case "Maintenance":
         return (
           <div
-            onClick={() => this.props.selectDep(name)}
+            onClick={() => this.handleClick(name)}
             key={name}
-            className="departments__title"
+            className={`departments__title ${
+              this.state.active === name ? "active" : ""
+            }`}
           >
             <i class="fas fa-wrench"></i>
             {name}
@@ -63,9 +74,11 @@ class DepList extends Component {
       case "Harvesting":
         return (
           <div
-            onClick={() => this.props.selectDep(name)}
+            onClick={() => this.handleClick(name)}
             key={name}
-            className="departments__title"
+            className={`departments__title ${
+              this.state.active === name ? "active" : ""
+            }`}
           >
             <i class="fab fa-pagelines"></i>
             {name}
@@ -75,9 +88,11 @@ class DepList extends Component {
       case "Growing":
         return (
           <div
-            onClick={() => this.props.selectDep(name)}
+            onClick={() => this.handleClick(name)}
             key={name}
-            className="departments__title"
+            className={`departments__title ${
+              this.state.active === name ? "active" : ""
+            }`}
           >
             <i class="fas fa-seedling"></i>
             {name}
@@ -87,9 +102,11 @@ class DepList extends Component {
       case "Safety":
         return (
           <div
-            onClick={() => this.props.selectDep(name)}
+            onClick={() => this.handleClick(name)}
             key={name}
-            className="departments__title"
+            className={`departments__title ${
+              this.state.active === name ? "active" : ""
+            }`}
           >
             <i class="fas fa-hard-hat"></i>
             {name}
@@ -99,9 +116,11 @@ class DepList extends Component {
       case "Packing":
         return (
           <div
-            onClick={() => this.props.selectDep(name)}
+            onClick={() => this.handleClick(name)}
             key={name}
-            className="departments__title"
+            className={`departments__title ${
+              this.state.active === name ? "active" : ""
+            }`}
           >
             <i class="fas fa-box"></i>
             {name}
@@ -111,6 +130,13 @@ class DepList extends Component {
       default:
         return;
     }
+  };
+
+  tempClick = () => {
+    this.setState({ active: "" });
+  };
+  logOut = () => {
+    history.push("/");
   };
 
   render() {
@@ -123,7 +149,13 @@ class DepList extends Component {
           })}
         </div>
         <footer className="admin">
-          <div className="admin__footer">{"Admin"}</div>
+          <div className="line">&nbsp;</div>
+          <div className="admin__footer">
+            <span className="admin__footer-admin">Admin</span>
+            <span className="admin__footer-logout" onClick={this.logOut}>
+              logout
+            </span>
+          </div>
         </footer>
       </div>
     );

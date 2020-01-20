@@ -7,6 +7,7 @@ body {
 .left {
   width: 50%;
   margin-right: auto;
+  text-align: center;
 }
 
 .signIn {
@@ -83,6 +84,7 @@ body {
       font-size: 0.8rem;
       font-weight: 700;
       margin-left: 1.6rem;
+      text-align: left;
       display: block;
       transition: all 0.2s;
     }
@@ -111,6 +113,7 @@ body {
         outline: none;
         box-shadow: 0 1rem 2rem rgba(black, 0.1);
         border-bottom: 3px solid $color-one;
+        transform: scale(1.01);
       }
 
       &:focus:invalid {
@@ -129,10 +132,7 @@ body {
     }
 
     &__btn {
-      display: absolute;
-      left: 50%;
-      transform: translateX(50%);
-
+      display: inline-block;
       border: 0;
       width: 50%;
       height: 2rem;
@@ -141,11 +141,10 @@ body {
       color: black;
       font-size: 0.8rem;
       font-family: inherit;
-      transition: all 0.2s;
+      transition: all 0.3s;
       &:hover {
         cursor: pointer;
-        scale: 10rem;
-        transform: scale(1.1) translateX(48%);
+        transform: scale(1.12);
         // transform: translateY(-0.1rem);
       }
 

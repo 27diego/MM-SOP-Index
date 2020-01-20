@@ -22,11 +22,9 @@
 
     &::after {
       content: "";
-      display: block;
       width: 75%;
       border-bottom: 1px solid black;
       display: inline-block;
-      text-align: center;
     }
   }
 }
@@ -73,22 +71,31 @@
   position: absolute;
   bottom: 0;
   margin-bottom: 1rem;
-  padding-left: 2rem;
-
-  &::before {
-    content: "";
-    display: block;
-    width: 50%;
-    border-bottom: 1px solid black;
-  }
+  text-align: center;
 
   &__footer {
     color: darkgray;
     font-size: 0.8rem;
+    display: flex;
+    justify-content: space-around;
 
-    &:hover {
+    &-admin:hover {
+      cursor: pointer;
+      color: black;
+    }
+
+    &-logout:hover {
       cursor: pointer;
       color: black;
     }
   }
+}
+
+.line {
+  content: "";
+  display: block;
+  width: 90%;
+  border-bottom: 1px solid black;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
