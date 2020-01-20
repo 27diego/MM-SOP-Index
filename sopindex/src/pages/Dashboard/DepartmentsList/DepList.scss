@@ -1,19 +1,32 @@
+@import "../../../Scss/variables";
+
 .list {
   //   padding: 2rem;
   height: 100%;
-  margin-top: 0.8rem;
   position: relative;
+  background-color: $color-four;
+  width: 93%;
+  height: 97%;
+  border-radius: 0.2rem;
+  box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.4);
+  }
 
   &__header {
-    padding-left: 2rem;
+    // padding-left: 2rem;
+    margin-top: 1rem;
+    text-align: center;
 
     &::after {
       content: "";
-      padding-top: 0.2rem;
       display: block;
-      //   margin: 0 auto;
-      width: 90%;
+      width: 75%;
       border-bottom: 1px solid black;
+      display: inline-block;
+      text-align: center;
     }
   }
 }
@@ -36,6 +49,17 @@
       color: black;
       cursor: pointer;
     }
+
+    .fas,
+    .fab {
+      padding-right: 0.4rem;
+    }
+  }
+
+  &__title {
+  }
+
+  &__img {
   }
 }
 
@@ -45,14 +69,26 @@
 }
 
 .admin {
+  width: 100%;
   position: absolute;
   bottom: 0;
   margin-bottom: 1rem;
   padding-left: 2rem;
-  color: darkgray;
 
-  &:hover {
-    cursor: pointer;
-    color: black;
+  &::before {
+    content: "";
+    display: block;
+    width: 50%;
+    border-bottom: 1px solid black;
+  }
+
+  &__footer {
+    color: darkgray;
+    font-size: 0.8rem;
+
+    &:hover {
+      cursor: pointer;
+      color: black;
+    }
   }
 }

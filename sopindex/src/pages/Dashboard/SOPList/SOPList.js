@@ -165,7 +165,9 @@ class SOPList extends Component {
     ];
 
     return allDep.map(dep => (
-      <div onClick={() => this.selectDoc(dep.id)}>{dep.name}</div>
+      <div key={dep.id} onClick={() => this.selectDoc(dep.id)}>
+        {dep.name}
+      </div>
     ));
   };
 

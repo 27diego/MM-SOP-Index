@@ -33,24 +33,98 @@ class DepList extends Component {
     ]
   };
 
+  renderList = name => {
+    switch (name) {
+      case "QA":
+        return (
+          <div
+            onClick={() => this.props.selectDep(name)}
+            key={name}
+            className="departments__title"
+          >
+            {/* <img className="departments__img" alt="QA icon" /> */}
+            <i class="fas fa-utensils"></i>
+            {name}
+          </div>
+        );
+
+      case "Maintenance":
+        return (
+          <div
+            onClick={() => this.props.selectDep(name)}
+            key={name}
+            className="departments__title"
+          >
+            <i class="fas fa-wrench"></i>
+            {name}
+          </div>
+        );
+
+      case "Harvesting":
+        return (
+          <div
+            onClick={() => this.props.selectDep(name)}
+            key={name}
+            className="departments__title"
+          >
+            <i class="fab fa-pagelines"></i>
+            {name}
+          </div>
+        );
+
+      case "Growing":
+        return (
+          <div
+            onClick={() => this.props.selectDep(name)}
+            key={name}
+            className="departments__title"
+          >
+            <i class="fas fa-seedling"></i>
+            {name}
+          </div>
+        );
+
+      case "Safety":
+        return (
+          <div
+            onClick={() => this.props.selectDep(name)}
+            key={name}
+            className="departments__title"
+          >
+            <i class="fas fa-hard-hat"></i>
+            {name}
+          </div>
+        );
+
+      case "Packing":
+        return (
+          <div
+            onClick={() => this.props.selectDep(name)}
+            key={name}
+            className="departments__title"
+          >
+            <i class="fas fa-box"></i>
+            {name}
+          </div>
+        );
+
+      default:
+        return;
+    }
+  };
+
   render() {
     return (
       <div className="list">
         <h3 className="list__header">Departments</h3>
         <div className="departments">
           {this.state.departments.map(department => {
-            return (
-              <div
-                onClick={() => this.props.selectDep(department.name)}
-                key={department.name}
-                className="departments__title"
-              >
-                {department.name}
-              </div>
-            );
+            return this.renderList(department.name);
           })}
         </div>
-        <footer className="admin">AdminName</footer>
+        <footer className="admin">
+          <div className="admin__footer">{"Admin"}</div>
+        </footer>
       </div>
     );
   }
