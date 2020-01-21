@@ -16,13 +16,19 @@
 }
 
 .sops {
-  background: $color-two;
+  background: $color-one;
   height: 100%;
   width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .document {
-  background: $color-four;
+  background: $color-one;
   height: 100%;
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

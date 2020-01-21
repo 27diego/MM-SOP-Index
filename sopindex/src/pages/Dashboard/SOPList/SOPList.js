@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./SOPList.scss";
 // import { connect } from "react-redux";
 
 class SOPList extends Component {
@@ -7,132 +8,180 @@ class SOPList extends Component {
       {
         id: 1,
         name: "one",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 2,
         name: "two",
-        category: "wash"
+        category: "wash",
+        lastViewed: ""
       },
       {
         id: 3,
         name: "three",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 4,
         name: "break",
-        category: "employee"
+        category: "employee",
+        lastViewed: ""
       }
     ],
     Safety: [
       {
         id: 5,
         name: "one",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 6,
         name: "two",
-        category: "wash"
+        category: "wash",
+        lastViewed: ""
       },
       {
         id: 7,
         name: "three",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 8,
         name: "break",
-        category: "employee"
+        category: "employee",
+        lastViewed: ""
       }
     ],
     Harvesting: [
       {
         id: 9,
         name: "one",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 10,
         name: "two",
-        category: "wash"
+        category: "wash",
+        lastViewed: ""
       },
       {
         id: 11,
         name: "three",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 12,
         name: "break",
-        category: "employee"
+        category: "employee",
+        lastViewed: ""
       }
     ],
     Packing: [
       {
         id: 13,
         name: "one",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 14,
         name: "two",
-        category: "wash"
+        category: "wash",
+        lastViewed: ""
       },
       {
         id: 15,
         name: "three",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 16,
         name: "break",
-        category: "employee"
+        category: "employee",
+        lastViewed: ""
       }
     ],
     Maintenance: [
       {
         id: 17,
         name: "one",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 18,
         name: "two",
-        category: "wash"
+        category: "wash",
+        lastViewed: ""
       },
       {
         id: 19,
         name: "three",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 20,
         name: "break",
-        category: "employee"
+        category: "employee",
+        lastViewed: ""
       }
     ],
     QA: [
       {
         id: 21,
         name: "one",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 22,
         name: "two",
-        category: "wash"
+        category: "wash",
+        lastViewed: ""
       },
       {
         id: 23,
         name: "three",
-        category: "chemical"
+        category: "chemical",
+        lastViewed: ""
       },
       {
         id: 24,
         name: "break",
-        category: "employee"
+        category: "employee",
+        lastViewed: ""
+      },
+      {
+        id: 25,
+        name: "one",
+        category: "chemical",
+        lastViewed: ""
+      },
+      {
+        id: 26,
+        name: "two",
+        category: "wash",
+        lastViewed: ""
+      },
+      {
+        id: 27,
+        name: "three",
+        category: "chemical",
+        lastViewed: ""
+      },
+      {
+        id: 28,
+        name: "break",
+        category: "employee",
+        lastViewed: ""
       }
     ],
     selected: ""
@@ -150,7 +199,9 @@ class SOPList extends Component {
 
   renderDep = name => {
     return this.state[this.props.Department].map(dep => (
-      <div onClick={() => this.selectDoc(dep.id)}>{dep.name}</div>
+      <div className="soplist__item" onClick={() => this.selectDoc(dep.id)}>
+        {dep.name}
+      </div>
     ));
   };
 
@@ -165,7 +216,11 @@ class SOPList extends Component {
     ];
 
     return allDep.map(dep => (
-      <div key={dep.id} onClick={() => this.selectDoc(dep.id)}>
+      <div
+        className="soplist__item"
+        key={dep.id}
+        onClick={() => this.selectDoc(dep.id)}
+      >
         {dep.name}
       </div>
     ));
@@ -175,7 +230,10 @@ class SOPList extends Component {
     console.log(this.state.selected);
     const { Department } = this.props;
     return (
-      <div>{Department ? this.renderDep(Department) : this.renderAllDep()}</div>
+      <div className="soplist">
+        <input className="soplist__search" type="text" placeholder="search" />
+        {Department ? this.renderDep(Department) : this.renderAllDep()}
+      </div>
     );
   }
 }

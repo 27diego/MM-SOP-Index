@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import "./Document.scss";
 
 class Document extends Component {
   render() {
-    return <div>{this.props.document}</div>;
+    return <div className="documentC">{this.props.document}</div>;
   }
 }
 

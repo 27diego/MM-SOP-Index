@@ -52,7 +52,7 @@ class DepList extends Component {
             }`}
           >
             {/* <img className="departments__img" alt="QA icon" /> */}
-            <i class="fas fa-utensils"></i>
+            <i className="fas fa-utensils"></i>
             {name}
           </div>
         );
@@ -66,7 +66,7 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i class="fas fa-wrench"></i>
+            <i className="fas fa-wrench"></i>
             {name}
           </div>
         );
@@ -80,7 +80,7 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i class="fab fa-pagelines"></i>
+            <i className="fab fa-pagelines"></i>
             {name}
           </div>
         );
@@ -94,7 +94,7 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i class="fas fa-seedling"></i>
+            <i className="fas fa-seedling"></i>
             {name}
           </div>
         );
@@ -108,7 +108,7 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i class="fas fa-hard-hat"></i>
+            <i className="fas fa-hard-hat"></i>
             {name}
           </div>
         );
@@ -122,7 +122,7 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i class="fas fa-box"></i>
+            <i className="fas fa-box"></i>
             {name}
           </div>
         );
