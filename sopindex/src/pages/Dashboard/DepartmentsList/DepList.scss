@@ -35,28 +35,28 @@
 
   &__title {
     color: darkgray;
-    padding-left: 2rem;
+    margin-left: 2rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
     border-left: 3px solid transparent;
+    transition: all 0.3s;
+
+    //stops elements from going to left when scaling
+    transform-origin: left top;
 
     &:hover {
-      //   background-color: rgba(black, 0.5);
-      border-left: black solid 3px;
+      // border-left: black solid 3px;
       color: black;
       cursor: pointer;
+      transform: scale(1.1);
     }
+
+    //select the element, then the line element
 
     .fas,
     .fab {
       padding-right: 0.4rem;
     }
-  }
-
-  &__title {
-  }
-
-  &__img {
   }
 }
 

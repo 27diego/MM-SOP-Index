@@ -51,9 +51,9 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            {/* <img className="departments__img" alt="QA icon" /> */}
-            <i className="fas fa-utensils"></i>
-            {name}
+            <span className="left-line">&nbsp;</span>
+            <i className="fas fa-utensils" />
+            <span className="departments__title-name">{name}</span>
           </div>
         );
 
@@ -66,8 +66,9 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i className="fas fa-wrench"></i>
-            {name}
+            <span className="left-line">&nbsp;</span>
+            <i className="fas fa-wrench" />
+            <span className="departments__title-name">{name}</span>
           </div>
         );
 
@@ -80,8 +81,9 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i className="fab fa-pagelines"></i>
-            {name}
+            <span className="left-line">&nbsp;</span>
+            <i className="fab fa-pagelines" />
+            <span className="departments__title-name">{name}</span>
           </div>
         );
 
@@ -94,8 +96,9 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i className="fas fa-seedling"></i>
-            {name}
+            <span className="left-line">&nbsp;</span>
+            <i className="fas fa-seedling" />
+            <span className="departments__title-name">{name}</span>
           </div>
         );
 
@@ -108,8 +111,9 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i className="fas fa-hard-hat"></i>
-            {name}
+            <span className="left-line">&nbsp;</span>
+            <i className="fas fa-hard-hat" />
+            <span className="departments__title-name">{name}</span>
           </div>
         );
 
@@ -122,8 +126,9 @@ class DepList extends Component {
               this.state.active === name ? "active" : ""
             }`}
           >
-            <i className="fas fa-box"></i>
-            {name}
+            <span className="left-line">&nbsp;</span>
+            <i className="fas fa-box" />
+            <span className="departments__title-name">{name}</span>
           </div>
         );
 
