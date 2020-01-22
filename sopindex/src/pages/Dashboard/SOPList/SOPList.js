@@ -212,8 +212,15 @@ class SOPList extends Component {
         lastViewed: "01/21/2020"
       }
     ],
-    selected: ""
+    selected: "",
+    length: Number.MAX_VALUE
   };
+
+  componentWillReceiveProps() {
+    if (this.props.Department) {
+      this.setState({ length: this.state[this.props.Department].length });
+    }
+  }
 
   search = e => {
     console.log(e.target.value);
@@ -241,6 +248,10 @@ class SOPList extends Component {
         </div>
       </div>
     ));
+  };
+
+  setLength = length => {
+    this.setState({ length });
   };
 
   renderAllDep = () => {
@@ -272,22 +283,27 @@ class SOPList extends Component {
   };
 
   render() {
-    console.log(this.state.selected);
     const { Department } = this.props;
     return (
       <div className="soplist">
         <div className="soplist__header">SOP List</div>
-        <input
-          onChange={this.search}
-          className="soplist__search"
-          type="text"
-          placeholder="search"
-        />
+        {this.state.length > 9 ? (
+          <input
+            onChange={this.search}
+            className="soplist__search"
+            type="text"
+            placeholder="search"
+          />
+        ) : (
+          ""
+        )}
         {Department ? this.renderDep(Department) : this.renderAllDep()}
       </div>
     );
   }
 }
+
+//input bar does not update within first click
 
 // const mapStateToProps = state => {
 //   return { Department: state.SelectDepartment.department };
