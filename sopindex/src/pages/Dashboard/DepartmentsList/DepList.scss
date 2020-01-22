@@ -35,7 +35,7 @@
 
   &__title {
     color: darkgray;
-    margin-left: 2rem;
+    padding-left: 2rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
     border-left: 3px solid transparent;
@@ -45,13 +45,11 @@
     transform-origin: left top;
 
     &:hover {
-      // border-left: black solid 3px;
+      border-left: black solid 3px;
       color: black;
       cursor: pointer;
       transform: scale(1.1);
     }
-
-    //select the element, then the line element
 
     .fas,
     .fab {

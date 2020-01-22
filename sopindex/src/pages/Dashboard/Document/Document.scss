@@ -2,11 +2,16 @@
 
 .documentC {
   background-color: $color-four;
-  width: 93%;
+  width: 98%;
   height: 97%;
   border-radius: 0.2rem;
+  transition: all 0.3s;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
+  }
 }
