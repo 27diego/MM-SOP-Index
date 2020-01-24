@@ -21,8 +21,8 @@ class CreateUser extends Component {
           </div>
           <div className="modal_">user greedings</div>
           <div className="modal__form">
-            <input className="modal__form-userName" type="text" required />
-            <input className="modal__form-password" type="password" required />
+            <input className="modal__form-input" type="text" required />
+            <input className="modal__form-input" type="password" required />
             <button className="modal__form-submit">Submit</button>
           </div>
         </div>
