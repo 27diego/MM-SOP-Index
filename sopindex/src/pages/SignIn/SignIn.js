@@ -50,6 +50,7 @@ class SignIn extends Component {
                 className="signIn__form__input"
                 id="username"
                 placeholder="Username *"
+                autoComplete="off"
                 value={this.state.username}
                 required
               />
@@ -64,6 +65,7 @@ class SignIn extends Component {
                 className="signIn__form__input"
                 id="password"
                 placeholder="Password *"
+                autoComplete="off"
                 value={this.state.password}
                 required
               />

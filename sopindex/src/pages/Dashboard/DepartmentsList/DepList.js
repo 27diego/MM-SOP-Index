@@ -150,7 +150,12 @@ class DepList extends Component {
         <footer className="admin">
           <div className="line">&nbsp;</div>
           <div className="admin__footer">
-            <span className="admin__footer-admin">Admin</span>
+            <span
+              onClick={() => history.push("/User/new")}
+              className="admin__footer-admin"
+            >
+              Admin
+            </span>
             <span className="admin__footer-logout" onClick={this.logOut}>
               logout
             </span>

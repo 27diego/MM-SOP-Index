@@ -9,6 +9,7 @@ import SignIn from "./pages/SignIn/SignIn";
 import Dashboard from "./pages/Dashboard/Main/Dashboard";
 import Admin from "./pages/Admin/Main/Admin";
 import sopPage from "./pages/sopPage/sop-page";
+import CreateUser from "./pages/Admin/CreateUser/CreateUser";
 
 //department pages
 import Growing from "./pages/Departments/Growing/Growing";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Dashboard" exact component={Dashboard} />
         <Route path="/Admin" exact component={Admin} />
         <Route path="/Page:id" exact component={sopPage} />
+        <Route path="/User/new" exact component={CreateUser} />
 
         <Route path="/Growing" exact component={Growing} />
         <Route path="/Harvesting" exact component={Harvesting} />

@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SOP.scss";
 
 export default function SOP({ document }) {
-  const [docNumber, setdocNumber] = useState(0);
-  setdocNumber(document);
-
-  return <div className="documentC">{docNumber}</div>;
+  return <div className="documentC">{document}</div>;
 }

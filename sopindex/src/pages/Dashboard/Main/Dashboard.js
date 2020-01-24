@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Dashboard.scss";
 import DepList from "../DepartmentsList/DepList";
 import SOPList from "../SOPList/SOPList";
-import Document from "../Document/Document";
+import SOP from "../SOP/SOP";
 
 class Dashboard extends Component {
   state = {
@@ -32,7 +32,7 @@ class Dashboard extends Component {
           />
         </div>
         <div className="document">
-          <Document document={this.state.Doc ? this.state.Doc : 1} />
+          <SOP document={this.state.Doc ? this.state.Doc : 1} />
         </div>
       </div>
     );

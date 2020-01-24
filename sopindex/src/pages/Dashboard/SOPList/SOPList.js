@@ -216,7 +216,7 @@ class SOPList extends Component {
     length: Number.MAX_VALUE
   };
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     if (this.props.Department) {
       this.setState({ length: this.state[this.props.Department].length });
     }
@@ -244,7 +244,6 @@ class SOPList extends Component {
           <span className="soplist__footer-date">
             Last Opened: {dep.lastViewed}
           </span>
-          <span className="soplist__footer-dep">{dep.department}</span>
         </div>
       </div>
     ));
