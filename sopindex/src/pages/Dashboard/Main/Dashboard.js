@@ -65,7 +65,7 @@ class Dashboard extends Component {
               timeout={400}
               classNames="fade"
             >
-              <Modal />
+              <Modal hideModal={this.hideModal} />
             </CSSTransition>
             <Overlay hideModal={this.hideModal} />
           </div>
