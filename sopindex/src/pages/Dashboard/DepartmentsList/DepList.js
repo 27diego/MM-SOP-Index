@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./DepList.scss";
+
 import history from "../../../history";
 // import { selectDep } from "../../../Redux/actions";
 // import { connect } from "react-redux";
@@ -151,7 +152,7 @@ class DepList extends Component {
           <div className="line">&nbsp;</div>
           <div className="admin__footer">
             <span
-              onClick={() => history.push("/User/new")}
+              onClick={this.props.handleModal}
               className="admin__footer-admin"
             >
               Admin

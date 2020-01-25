@@ -7,9 +7,9 @@ import { Route, Router, Switch } from "react-router-dom";
 //domain pages
 import SignIn from "./pages/SignIn/SignIn";
 import Dashboard from "./pages/Dashboard/Main/Dashboard";
-import Admin from "./pages/Admin/Main/Admin";
+import Users from "./pages/Admin/ManageUsers/ManageUsers";
+import SOPs from "./pages/Admin/ManageSOPs/ManageSOP";
 import sopPage from "./pages/sopPage/sop-page";
-import CreateUser from "./pages/Admin/CreateUser/CreateUser";
 
 //department pages
 import Growing from "./pages/Departments/Growing/Growing";
@@ -25,9 +25,9 @@ function App() {
       <Switch>
         <Route path="/" exact component={SignIn} />
         <Route path="/Dashboard" exact component={Dashboard} />
-        <Route path="/Admin" exact component={Admin} />
+        <Route path="/Users" exact component={Users} />
+        <Route path="/SOPs" exact component={SOPs} />
         <Route path="/Page:id" exact component={sopPage} />
-        <Route path="/User/new" exact component={CreateUser} />
 
         <Route path="/Growing" exact component={Growing} />
         <Route path="/Harvesting" exact component={Harvesting} />
