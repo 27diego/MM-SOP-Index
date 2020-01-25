@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard/Main/Dashboard";
 import Users from "./pages/Admin/ManageUsers/ManageUsers";
 import SOPs from "./pages/Admin/ManageSOPs/ManageSOP";
 import sopPage from "./pages/sopPage/sop-page";
+import SignUp from "./pages/Actions/SignUp/SignUp";
 
 //department pages
 import Growing from "./pages/Departments/Growing/Growing";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/Users" exact component={Users} />
         <Route path="/SOPs" exact component={SOPs} />
         <Route path="/Page:id" exact component={sopPage} />
+        <Route path="/User/signUp" exact component={SignUp} />
 
         <Route path="/Growing" exact component={Growing} />
         <Route path="/Harvesting" exact component={Harvesting} />

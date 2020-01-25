@@ -80,7 +80,7 @@ class SignIn extends Component {
               <Link className="signIn__form__req-cred" to="/user/forgot">
                 Forgot Credentials
               </Link>
-              <Link className="signIn__form__req-acc" to="/user/new">
+              <Link className="signIn__form__req-acc" to="/User/signUp">
                 Create Account
               </Link>
             </div>
