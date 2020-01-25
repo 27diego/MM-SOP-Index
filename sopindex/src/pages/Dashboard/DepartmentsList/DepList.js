@@ -38,7 +38,9 @@ class DepList extends Component {
 
   handleClick = name => {
     this.props.selectDep(name);
-    this.setState({ active: name });
+    this.state.active === name
+      ? this.setState({ active: "" })
+      : this.setState({ active: name });
   };
 
   renderList = name => {
@@ -63,7 +65,7 @@ class DepList extends Component {
             onClick={() => this.handleClick(name)}
             key={name}
             className={`departments__title ${
-              this.state.active === name ? "active" : ""
+              this.state.active === name ? "active-dep" : ""
             }`}
           >
             <i className="fas fa-wrench" />
@@ -77,7 +79,7 @@ class DepList extends Component {
             onClick={() => this.handleClick(name)}
             key={name}
             className={`departments__title ${
-              this.state.active === name ? "active" : ""
+              this.state.active === name ? "active-dep" : ""
             }`}
           >
             <i className="fab fa-pagelines" />
@@ -91,7 +93,7 @@ class DepList extends Component {
             onClick={() => this.handleClick(name)}
             key={name}
             className={`departments__title ${
-              this.state.active === name ? "active" : ""
+              this.state.active === name ? "active-dep" : ""
             }`}
           >
             <i className="fas fa-seedling" />
@@ -105,7 +107,7 @@ class DepList extends Component {
             onClick={() => this.handleClick(name)}
             key={name}
             className={`departments__title ${
-              this.state.active === name ? "active" : ""
+              this.state.active === name ? "active-dep" : ""
             }`}
           >
             <i className="fas fa-hard-hat" />
@@ -119,7 +121,7 @@ class DepList extends Component {
             onClick={() => this.handleClick(name)}
             key={name}
             className={`departments__title ${
-              this.state.active === name ? "active" : ""
+              this.state.active === name ? "active-dep" : ""
             }`}
           >
             <i className="fas fa-box" />

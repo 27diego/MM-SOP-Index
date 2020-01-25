@@ -214,7 +214,7 @@ class SOPList extends Component {
     ],
     selected: "",
     length: Number.MAX_VALUE,
-    active: ""
+    item: ""
   };
 
   UNSAFE_componentWillReceiveProps() {
@@ -231,14 +231,17 @@ class SOPList extends Component {
     const { id } = department;
     this.setState({ selected: id });
     this.props.selectDocument(id);
-    this.setState({ active: id });
+
+    this.state.item === id
+      ? this.setState({ item: "" })
+      : this.setState({ item: id });
   };
 
   renderDep = name => {
     return this.state[this.props.Department].map(dep => (
       <div
         className={`soplist__item ${
-          this.state.active === dep.id ? "soplist__item-active" : ""
+          this.state.item === dep.id ? "soplist__item-activeitem" : ""
         }`}
         key={dep.id}
         onClick={() => this.onClick(dep)}
@@ -271,7 +274,7 @@ class SOPList extends Component {
     return allDep.map(dep => (
       <div
         className={`soplist__item ${
-          this.state.active === dep.id ? "soplist__item-active" : ""
+          this.state.item === dep.id ? "soplist__item-activeitem" : ""
         }`}
         key={dep.id}
         onClick={() => this.onClick(dep)}
@@ -288,7 +291,7 @@ class SOPList extends Component {
   };
 
   render() {
-    console.log(this.state.active);
+    console.log(this.state.item);
     const { Department } = this.props;
     return (
       <div className="soplist">
