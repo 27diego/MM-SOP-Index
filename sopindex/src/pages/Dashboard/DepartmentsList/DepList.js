@@ -49,7 +49,7 @@ class DepList extends Component {
             onClick={() => this.handleClick(name)}
             key={name}
             className={`departments__title ${
-              this.state.active === name ? "active" : ""
+              this.state.active === name ? "active-dep" : ""
             }`}
           >
             <i className="fas fa-utensils" />
@@ -132,9 +132,6 @@ class DepList extends Component {
     }
   };
 
-  tempClick = () => {
-    this.setState({ active: "" });
-  };
   logOut = () => {
     history.push("/");
   };

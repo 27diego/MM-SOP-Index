@@ -55,6 +55,11 @@
       box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
     }
 
+    &-active {
+      transform: scale(1.05);
+      box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
+    }
+
     &-title {
       width: 100%;
       display: flex;
