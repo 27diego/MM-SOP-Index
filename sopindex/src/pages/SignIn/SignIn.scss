@@ -1,7 +1,7 @@
 @import "../../Scss/variables";
 
 body {
-  background-color: rgba(#221e1d, 0.9);
+  background-image: linear-gradient(to right, $color-one, $color-five);
 }
 
 .left {
