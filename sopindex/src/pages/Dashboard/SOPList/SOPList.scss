@@ -51,12 +51,12 @@
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
+      transform: scale(1.01);
       box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
     }
 
     &-activeitem {
-      transform: scale(1.05);
+      transform: scale(1.01);
       box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
     }
 
