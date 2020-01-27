@@ -96,7 +96,7 @@ body {
       //inherit font family
       font-family: inherit;
       padding: 0.7rem 1.7rem;
-      border-radius: 100px;
+      border-radius: 3px;
       background-color: rgba($color: darkgrey, $alpha: 100);
 
       //remove wierd looking border
@@ -136,7 +136,7 @@ body {
       border: 0;
       width: 50%;
       height: 2rem;
-      border-radius: 100px;
+      border-radius: 3px;
       background-color: $color-three;
       color: black;
       font-size: 0.8rem;

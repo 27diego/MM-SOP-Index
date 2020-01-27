@@ -15,13 +15,11 @@ class CreateUser extends Component {
     ],
     name: "",
     department: "",
-    submitted: false
+    forgot: false
   };
 
   componentDidMount() {
-    if (this.props.location.state.forgot) {
-      this.setState({ submitted: true });
-    }
+    this.setState({ forgot: this.props.location.state.forgot });
   }
 
   onClick = () => {
@@ -29,9 +27,15 @@ class CreateUser extends Component {
   };
 
   onSubmit = e => {
+    const { department, name } = this.state;
     e.preventDefault();
-    console.log(this.state.name, this.state.department);
-    this.setState({ submitted: true });
+
+    if (department !== "" && name !== "") {
+      console.log(this.state.name, this.state.department);
+      this.setState({ submitted: true });
+    } else {
+      console.log("Fill all fields");
+    }
   };
   render() {
     return (
@@ -39,6 +43,7 @@ class CreateUser extends Component {
         <div className="content">
           <div className="header">
             <img
+              onClick={() => history.push("/")}
               className="header-img"
               src="https://www.montereymushrooms.com/hs-fs/hubfs/2018%20Website%20Assets/mm-logo@2x.png?width=452&height=244&name=mm-logo@2x.png"
               alt="MM logo"

@@ -1,0 +1,130 @@
+.UsersDash {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.pane {
+  width: 20%;
+  height: 100%;
+  background-color: #0053a0;
+  color: white;
+  text-align: left;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-top: 1rem;
+    background-color: #00396d;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+  &__item {
+    padding: 0.5rem 0 0.5rem 2rem;
+    height: 2.5rem;
+    width: 90%;
+    align-self: center;
+
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: #00396d;
+      border-radius: 5px;
+    }
+  }
+
+  &__footer {
+    padding: 0.5rem 0 0.5rem 2rem;
+    height: 2.5rem;
+    width: 90%;
+    align-self: center;
+
+    position: absolute;
+    bottom: 0.2rem;
+
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: #00396d;
+      border-radius: 5px;
+    }
+  }
+}
+
+.content {
+  width: 80%;
+  height: 100%;
+  background-color: #d9d9d9;
+  padding: 1rem;
+
+  .Uheader {
+    width: 99%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    border-bottom: gray solid 0.02px;
+
+    &__title {
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0;
+    }
+
+    &__select {
+      margin-right: 1rem;
+      width: 10rem;
+      height: 2rem;
+    }
+
+    &__input {
+      margin-right: 1rem;
+      width: 13rem;
+      height: 2rem;
+      padding: 0.5rem;
+      border: 1px darkgrey solid;
+      border-radius: 4px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    &__btn {
+      margin-right: 1rem;
+      border: none;
+      padding: 0.5rem;
+      height: 2rem;
+      border-radius: 4px;
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        transform: translateY(0.05rem);
+      }
+      &:hover {
+        box-shadow: 1px 1px 0.5rem 0 rgba(0, 0, 0, 0.4);
+      }
+    }
+    &__managebtn {
+      background-color: white;
+      width: 2rem;
+    }
+  }
+
+  .Users {
+    height: auto;
+    border-left: 1px darkgrey solid;
+    border-right: 1px darkgrey solid;
+    border-bottom: 1px darkgrey solid;
+    border-radius: 5px;
+
+    &__item {
+      border-bottom: 1px darkgrey solid;
+      padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+    }
+  }
+}
