@@ -18,6 +18,12 @@ class CreateUser extends Component {
     submitted: false
   };
 
+  componentDidMount() {
+    if (this.props.location.state.forgot) {
+      this.setState({ submitted: true });
+    }
+  }
+
   onClick = () => {
     history.push("/");
   };

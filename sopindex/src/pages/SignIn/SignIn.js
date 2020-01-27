@@ -77,10 +77,26 @@ class SignIn extends Component {
               Log In
             </button>
             <div className="signIn__form__req">
-              <Link className="signIn__form__req-cred" to="/user/forgot">
+              <Link
+                className="signIn__form__req-cred"
+                to={{
+                  pathname: "/User/signUp",
+                  state: {
+                    forgot: true
+                  }
+                }}
+              >
                 Forgot Credentials
               </Link>
-              <Link className="signIn__form__req-acc" to="/User/signUp">
+              <Link
+                className="signIn__form__req-acc"
+                to={{
+                  pathname: "/User/signUp",
+                  state: {
+                    forgot: false
+                  }
+                }}
+              >
                 Create Account
               </Link>
             </div>
