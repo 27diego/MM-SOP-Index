@@ -67,55 +67,7 @@ class ManageUsers extends Component {
     ]
   };
   render() {
-    return (
-      <div className="UsersDash">
-        <div className="pane">
-          <div className="pane__header">SOP Index</div>
-          <div className="pane__item">
-            <span>Manage Users</span>
-          </div>
-          <div className="pane__item">
-            <span>Farm</span>
-          </div>
-          <div className="pane__footer">
-            <span>Refresh Data</span>
-          </div>
-        </div>
-        <div className="content">
-          <div className="Uheader">
-            <span className="Uheader__title"> Users</span>
-            <select className="Uheader__select">
-              <option>Active Users</option>
-              <option>Awaiting Approval</option>
-            </select>
-            <input
-              className="Uheader__input"
-              type="text"
-              placeholder="Search Users"
-            />
-            <button className="Uheader__btn">Add User</button>
-            <div className="Uheader__managebtn">
-              <div className="Uheader__managebtn-icon">&nbsp;</div>
-            </div>
-          </div>
-
-          <div className="Users">
-            <div className="Users__Uheader">
-              <div className="Users__item">
-                <span>Name</span> <span>Department</span>
-                <span>Role</span>
-              </div>
-            </div>
-            {this.state.users.map(user => (
-              <div className="Users__item">
-                <span>{user.name}</span> <span>{user.department}</span>
-                <span>{user.role}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
+    return <div>hello users</div>;
   }
 }
 

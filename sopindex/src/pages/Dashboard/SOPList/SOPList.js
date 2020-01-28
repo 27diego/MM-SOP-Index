@@ -214,7 +214,8 @@ class SOPList extends Component {
     ],
     selected: "",
     length: Number.MAX_VALUE,
-    item: ""
+    item: "",
+    admin: false
   };
 
   UNSAFE_componentWillReceiveProps() {
@@ -247,10 +248,19 @@ class SOPList extends Component {
         onClick={() => this.onClick(dep)}
       >
         <div className="soplist__item-title">{dep.name}</div>
+        {this.state.admin ? (
+          <div className="soplist__item__btn">
+            <button className="soplist__item__btn-edit">Edit</button>
+            <button className="soplist__item__btn-delete">Delete</button>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="soplist__footer">
           <span className="soplist__footer-date">
             Last Opened: {dep.lastViewed}
           </span>
+          <span className="soplist__footer-dep">{dep.department}</span>
         </div>
       </div>
     ));
@@ -280,6 +290,14 @@ class SOPList extends Component {
         onClick={() => this.onClick(dep)}
       >
         <div className="soplist__item-title">{dep.name}</div>
+        {this.state.admin ? (
+          <div className="soplist__item__btn">
+            <button className="soplist__item__btn-edit">Edit</button>
+            <button className="soplist__item__btn-delete">Delete</button>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="soplist__footer">
           <span className="soplist__footer-date">
             Last Opened: {dep.lastViewed}
