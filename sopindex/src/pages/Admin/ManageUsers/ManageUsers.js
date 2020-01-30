@@ -64,10 +64,46 @@ class ManageUsers extends Component {
         department: "QA",
         role: "User"
       }
-    ]
+    ],
+    currentAdmin: "Maritza",
+    count: 5
   };
   render() {
-    return <div>hello users</div>;
+    return (
+      <div className="adminDash">
+        <div className="aheader">
+          <h3 className="aheader__title">SOP Index</h3>
+          <span className="aheader__futureLink">Users</span>
+          <span className="aheader__admin">{this.state.currentAdmin}</span>
+        </div>
+        <div className="content">
+          <div className="panel">
+            <h3 className="panel__header">Users</h3>
+            <ul className="panel__list">
+              <li className="panel__item">Active Members</li>
+              <li className="panel__item">Waiting Approval</li>
+            </ul>
+          </div>
+          <div className="users">
+            <div className="Uheader">
+              <span className="Uheader__userCnt">{`${this.state.count} members`}</span>
+              <button className="Uheader__btn">+ Add Member</button>
+            </div>
+            <div className="usersSection">
+              {this.state.users.map(user => (
+                <div className="user">
+                  <span className="user__name">{user.name}</span>
+                  <span className="user__role">{user.role}</span>
+                  <span className="user__menu">
+                    <div className="user__menu__dot">&nbsp;</div>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

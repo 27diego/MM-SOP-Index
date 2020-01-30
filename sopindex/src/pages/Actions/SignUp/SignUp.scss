@@ -92,9 +92,11 @@
           outline: none;
         }
         &:hover {
-          cursor: pointer;
           box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
-          //   transform: scale(1.1);
+          cursor: pointer;
+          background-color: white;
+          color: $color-five;
+          border: 1px solid $color-five;
         }
 
         &:active {
@@ -157,7 +159,10 @@
     }
     &:hover {
       cursor: pointer;
-      //   transform: scale(1.1);
+      background-color: white;
+      color: $color-five;
+      border: 1px solid $color-five;
+      box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.3);
     }
 
     &:active {
