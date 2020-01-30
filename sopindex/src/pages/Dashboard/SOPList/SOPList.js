@@ -313,18 +313,20 @@ class SOPList extends Component {
     const { Department } = this.props;
     return (
       <div className="soplist">
-        <div className="soplist__header">SOP List</div>
-        {this.state.length > 9 ? (
-          <input
-            onChange={this.search}
-            className="soplist__search"
-            type="text"
-            placeholder="search"
-          />
-        ) : (
-          ""
-        )}
-        {Department ? this.renderDep(Department) : this.renderAllDep()}
+        <div className="parentparent">
+          <div className="soplist__header">SOP List</div>
+          {this.state.length > 9 ? (
+            <input
+              onChange={this.search}
+              className="soplist__search"
+              type="text"
+              placeholder="search"
+            />
+          ) : (
+            ""
+          )}
+          {Department ? this.renderDep(Department) : this.renderAllDep()}
+        </div>
       </div>
     );
   }

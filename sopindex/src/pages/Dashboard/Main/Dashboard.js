@@ -7,7 +7,7 @@ import SOP from "../SOP/SOP";
 import Modal from "../../../components/Modal/Modal";
 import Overlay from "../../../components/Overlay/Overlay";
 
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 
 class Dashboard extends Component {
   state = {
@@ -59,14 +59,7 @@ class Dashboard extends Component {
           ""
         ) : (
           <div className="mainModal">
-            <CSSTransition
-              in={this.state.showModal}
-              appear={true}
-              timeout={400}
-              classNames="fade"
-            >
-              <Modal hideModal={this.hideModal} />
-            </CSSTransition>
+            <Modal hideModal={this.hideModal} />
             <Overlay hideModal={this.hideModal} />
           </div>
         )}

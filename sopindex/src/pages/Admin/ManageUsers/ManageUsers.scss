@@ -16,9 +16,13 @@
     justify-content: center;
 
     box-shadow: 1px 1px 0.3rem 0 rgba(0, 0, 0, 0.3);
+
     &__title {
       position: absolute;
       left: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     &__futureLink {
