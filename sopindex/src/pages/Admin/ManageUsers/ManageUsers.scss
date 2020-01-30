@@ -84,8 +84,9 @@
       overflow-y: scroll;
 
       .Uheader {
-        width: 100%;
-        padding: 2rem;
+        width: 90%;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
         position: relative;
 
         &::after {
@@ -131,12 +132,13 @@
 
       .usersSection {
         .user {
-          width: 100%;
+          width: 90%;
           padding: 1rem;
           position: relative;
+
           &__name {
-          }
-          &__role {
+            width: 30%;
+            float: left;
           }
           &__menu {
             position: absolute;
@@ -145,6 +147,7 @@
             display: flex;
             justify-content: center;
             width: 3rem;
+
             &-dot {
               height: 4px;
               width: 4px;

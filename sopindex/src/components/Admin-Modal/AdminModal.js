@@ -2,21 +2,55 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./AdminModal.scss";
 
-export default function AdminModal({ hideModal }) {
-  return ReactDOM.createPortal(
-    <div className="body">
-      <div className="option">
-        <div className="option__right">
-          <div className="option__right-header">Give Admin Rights</div>
-          <p className="option__right-description">
-            Can Manage SOPs and admin members
-          </p>
+class AdminModal extends React.Component {
+  state = {
+    member: "user",
+    admin: "Maritza"
+  };
+
+  render() {
+    return ReactDOM.createPortal(
+      <div className="body">
+        <div className="option">
+          <div className="option__right">
+            <div className="option__right-header">
+              {this.state.member === "admin"
+                ? this.state.admin === "Maritza"
+                  ? `Remove Admin Rights`
+                  : ""
+                : `Give Admin Rights`}
+            </div>
+            <p className="option__right-description">
+              {this.state.member === "admin"
+                ? this.state.admin === "Maritza"
+                  ? `Remove Admin privileges`
+                  : ""
+                : `Can Manage SOPs and team members`}
+            </p>
+          </div>
+          <div className="option__remove">
+            <span>Remove user from Team</span>
+          </div>
         </div>
-        <div className="option__remove">
-          <span>Remove user from Team</span>
-        </div>
-      </div>
-    </div>,
-    document.querySelector("#admin-modal")
-  );
+      </div>,
+      document.querySelector("#admin-modal")
+    );
+  }
 }
+
+export default AdminModal;
+
+/*
+<div className="body">
+        <div className="option">
+          <div className="option__right">
+            <div className="option__right-header">Give Admin Rights</div>
+            <p className="option__right-description">
+              Can Manage SOPs and admin members
+            </p>
+          </div>
+          <div className="option__remove">
+            <span>Remove user from Team</span>
+          </div>
+        </div>
+      </div> */

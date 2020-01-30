@@ -65,10 +65,34 @@ class ManageUsers extends Component {
         name: "Kay Romero",
         department: "QA",
         role: "User"
+      },
+      {
+        id: 10,
+        name: "Gilda Bruce",
+        department: "QA",
+        role: "User"
+      },
+      {
+        id: 11,
+        name: "Ester Chang",
+        department: "QA",
+        role: "Admin"
+      },
+      {
+        id: 12,
+        name: "Castillo Moody",
+        department: "QA",
+        role: "User"
+      },
+      {
+        id: 13,
+        name: "Rosemary Griffith",
+        department: "QA",
+        role: "Admin"
       }
     ],
     currentAdmin: "Maritza",
-    count: 5,
+    count: 10,
     showModal: false
   };
 
@@ -103,9 +127,13 @@ class ManageUsers extends Component {
             </div>
             <div className="usersSection">
               {this.state.users.map(user => (
-                <div className="user">
-                  <span className="user__name">{user.name}</span>
-                  <span className="user__role">{user.role}</span>
+                <div className="user" key={user.id}>
+                  <div className="user__name">
+                    <span>{user.name}</span>
+                  </div>
+                  <div className="user__role">
+                    <span>{user.role}</span>
+                  </div>
                   <div className="user__menu" onClick={this.handleModal}>
                     <div className="user__menu-dot">&nbsp;</div>
                     <div className="user__menu-dot">&nbsp;</div>
