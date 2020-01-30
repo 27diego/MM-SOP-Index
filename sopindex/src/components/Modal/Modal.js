@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./Modal.scss";
 import history from "../../history";
 
-export default function Modal({ hideModal }) {
+export default function Modal() {
   return ReactDOM.createPortal(
     <div className="modal">
       <div onClick={() => history.push("/Users")} className="modal__item">

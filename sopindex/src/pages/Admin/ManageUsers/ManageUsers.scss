@@ -2,6 +2,7 @@
   background: #e6e6e6;
   height: 100%;
   width: 100%;
+  position: relative;
 
   .aheader {
     background-color: #f2f2f2;
@@ -71,6 +72,8 @@
         &:hover {
           background-color: darkgrey;
           color: black;
+          transition-delay: 0.1s;
+          cursor: pointer;
         }
       }
     }
@@ -78,6 +81,7 @@
     .users {
       width: 80%;
       height: 100%;
+      overflow-y: scroll;
 
       .Uheader {
         width: 100%;
@@ -127,14 +131,34 @@
 
       .usersSection {
         .user {
+          width: 100%;
+          padding: 1rem;
+          position: relative;
           &__name {
           }
           &__role {
           }
           &__menu {
-            &__dot {
+            position: absolute;
+            right: 4rem;
+            bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            width: 3rem;
+            &-dot {
+              height: 4px;
+              width: 4px;
+              border-radius: 50%;
+              background-color: black;
+              margin: 2px;
+            }
+
+            &:hover {
+              cursor: pointer;
             }
           }
+
+          border-bottom: 1px solid darkgrey;
         }
       }
     }

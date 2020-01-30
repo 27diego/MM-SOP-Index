@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./ManageUsers.scss";
+import "../../../components/Admin-Modal/AdminModal";
+import AdminModal from "../../../components/Admin-Modal/AdminModal";
 
 class ManageUsers extends Component {
   state = {
@@ -66,8 +68,18 @@ class ManageUsers extends Component {
       }
     ],
     currentAdmin: "Maritza",
-    count: 5
+    count: 5,
+    showModal: false
   };
+
+  handleModal = () => {
+    let condition = this.state.showModal;
+
+    condition
+      ? this.setState({ showModal: false })
+      : this.setState({ showModal: true });
+  };
+
   render() {
     return (
       <div className="adminDash">
@@ -94,14 +106,18 @@ class ManageUsers extends Component {
                 <div className="user">
                   <span className="user__name">{user.name}</span>
                   <span className="user__role">{user.role}</span>
-                  <span className="user__menu">
-                    <div className="user__menu__dot">&nbsp;</div>
-                  </span>
+                  <div className="user__menu" onClick={this.handleModal}>
+                    <div className="user__menu-dot">&nbsp;</div>
+                    <div className="user__menu-dot">&nbsp;</div>
+                    <div className="user__menu-dot">&nbsp;</div>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        {this.state.showModal ? <AdminModal /> : ""}
       </div>
     );
   }
