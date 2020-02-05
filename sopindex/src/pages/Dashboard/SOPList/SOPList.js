@@ -314,7 +314,9 @@ class SOPList extends Component {
     return (
       <div className="soplist">
         <div className="parentparent">
-          <div className="soplist__header">SOP List</div>
+          <div className="soplist__header">
+            <span>SOP List</span>
+          </div>
           {this.state.length > 9 ? (
             <input
               onChange={this.search}

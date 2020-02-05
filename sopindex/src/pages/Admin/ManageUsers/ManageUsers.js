@@ -4,97 +4,105 @@ import "../../../components/Admin-Modal/AdminModal";
 import AdminModal from "../../../components/Admin-Modal/AdminModal";
 
 class ManageUsers extends Component {
-  state = {
-    users: [
-      {
-        id: 0,
-        name: "Isabel Savage",
-        department: "QA",
-        role: "Admin"
-      },
-      {
-        id: 1,
-        name: "Huff Patton",
-        department: "QA",
-        role: "User"
-      },
-      {
-        id: 2,
-        name: "Becky Marsh",
-        department: "QA",
-        role: "Admin"
-      },
-      {
-        id: 3,
-        name: "Gilda Bruce",
-        department: "QA",
-        role: "User"
-      },
-      {
-        id: 4,
-        name: "Ester Chang",
-        department: "QA",
-        role: "Admin"
-      },
-      {
-        id: 5,
-        name: "Castillo Moody",
-        department: "QA",
-        role: "User"
-      },
-      {
-        id: 6,
-        name: "Rosemary Griffith",
-        department: "QA",
-        role: "Admin"
-      },
-      {
-        id: 7,
-        name: "Jackie Mosley",
-        department: "QA",
-        role: "User"
-      },
-      {
-        id: 8,
-        name: "Cummings Atkinson",
-        department: "QA",
-        role: "Admin"
-      },
-      {
-        id: 9,
-        name: "Kay Romero",
-        department: "QA",
-        role: "User"
-      },
-      {
-        id: 10,
-        name: "Gilda Bruce",
-        department: "QA",
-        role: "User"
-      },
-      {
-        id: 11,
-        name: "Ester Chang",
-        department: "QA",
-        role: "Admin"
-      },
-      {
-        id: 12,
-        name: "Castillo Moody",
-        department: "QA",
-        role: "User"
-      },
-      {
-        id: 13,
-        name: "Rosemary Griffith",
-        department: "QA",
-        role: "Admin"
-      }
-    ],
-    currentAdmin: "Maritza",
-    count: 10,
-    showModal: false
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      users: [
+        {
+          id: 0,
+          name: "Isabel Savage",
+          department: "QA",
+          role: "Admin"
+        },
+        {
+          id: 1,
+          name: "Huff Patton",
+          department: "QA",
+          role: "User"
+        },
+        {
+          id: 2,
+          name: "Becky Marsh",
+          department: "QA",
+          role: "Admin"
+        },
+        {
+          id: 3,
+          name: "Gilda Bruce",
+          department: "QA",
+          role: "User"
+        },
+        {
+          id: 4,
+          name: "Ester Chang",
+          department: "QA",
+          role: "Admin"
+        },
+        {
+          id: 5,
+          name: "Castillo Moody",
+          department: "QA",
+          role: "User"
+        },
+        {
+          id: 6,
+          name: "Rosemary Griffith",
+          department: "QA",
+          role: "Admin"
+        },
+        {
+          id: 7,
+          name: "Jackie Mosley",
+          department: "QA",
+          role: "User"
+        },
+        {
+          id: 8,
+          name: "Cummings Atkinson",
+          department: "QA",
+          role: "Admin"
+        },
+        {
+          id: 9,
+          name: "Kay Romero",
+          department: "QA",
+          role: "User"
+        },
+        {
+          id: 10,
+          name: "Gilda Bruce",
+          department: "QA",
+          role: "User"
+        },
+        {
+          id: 11,
+          name: "Ester Chang",
+          department: "QA",
+          role: "Admin"
+        },
+        {
+          id: 12,
+          name: "Castillo Moody",
+          department: "QA",
+          role: "User"
+        },
+        {
+          id: 13,
+          name: "Rosemary Griffith",
+          department: "QA",
+          role: "Admin"
+        }
+      ],
+      currentAdmin: "Maritza",
+      count: 10,
+      showModal: false,
+      modalPosition: {}
+    };
+
+    this.myRef = React.createRef();
+    this.menus = [];
+  }
 
   handleModal = () => {
     let condition = this.state.showModal;
@@ -102,6 +110,31 @@ class ManageUsers extends Component {
     condition
       ? this.setState({ showModal: false })
       : this.setState({ showModal: true });
+  };
+
+  toggle = () => {
+    const {
+      top,
+      bottom,
+      right,
+      left
+    } = this.menus.undefined.getClientRects()[0];
+
+    console.log(
+      this.menus.undefined.offsetTop,
+      this.menus.undefined.offsetLeft
+    );
+
+    this.setState({
+      modalPosition: {
+        top,
+        bottom,
+        right,
+        left
+      }
+    });
+
+    this.handleModal();
   };
 
   render() {
@@ -134,7 +167,12 @@ class ManageUsers extends Component {
                   <div className="user__role">
                     <span>{user.role}</span>
                   </div>
-                  <div className="user__menu" onClick={this.handleModal}>
+                  <div
+                    className="user__menu"
+                    // ref={this.myRef}
+                    ref={menus => (this.menus[this.key] = menus)}
+                    onClick={this.toggle}
+                  >
                     <div className="user__menu-dot">&nbsp;</div>
                     <div className="user__menu-dot">&nbsp;</div>
                     <div className="user__menu-dot">&nbsp;</div>
@@ -145,7 +183,11 @@ class ManageUsers extends Component {
           </div>
         </div>
 
-        {this.state.showModal ? <AdminModal /> : ""}
+        {this.state.showModal ? (
+          <AdminModal position={this.state.modalPosition} />
+        ) : (
+          ""
+        )}
       </div>
     );
   }

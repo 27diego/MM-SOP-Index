@@ -3,9 +3,12 @@ import ReactDOM from "react-dom";
 import "./Modal.scss";
 import history from "../../history";
 
-export default function Modal() {
+export default function Modal({ hideModal }) {
   return ReactDOM.createPortal(
     <div className="modal">
+      <div onClick={() => hideModal()} className="modal__exit">
+        &nbsp;
+      </div>
       <div onClick={() => history.push("/Users")} className="modal__item">
         <img
           className="modal__item-logo"

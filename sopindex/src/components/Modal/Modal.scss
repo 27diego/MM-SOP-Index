@@ -13,7 +13,7 @@
   width: 40%;
 
   //top right bottom left
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem;
 
   background-color: rgba($color: $color-one, $alpha: 1);
 
@@ -49,6 +49,49 @@
 
     &:last-child {
       margin-top: 1.3rem;
+    }
+  }
+
+  &__exit {
+    cursor: pointer;
+
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    align-self: flex-end;
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    position: relative;
+    display: inline-block;
+
+    &:hover {
+      &::before,
+      &::after {
+        background: darkgrey;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      margin-top: -2px;
+      background: black;
+      border-radius: 5px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
     }
   }
 }

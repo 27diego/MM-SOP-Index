@@ -9,8 +9,17 @@ class AdminModal extends React.Component {
   };
 
   render() {
+    const { top, bottom, left, right } = this.props.position;
+    // console.log(top, right, left, bottom);
     return ReactDOM.createPortal(
-      <div className="body">
+      <div
+        className="body"
+        style={{
+          position: "absolute",
+          top: 21,
+          left: 787
+        }}
+      >
         <div className="option">
           <div className="option__right">
             <div className="option__right-header">
