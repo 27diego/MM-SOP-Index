@@ -9,7 +9,7 @@ class AdminModal extends React.Component {
   };
 
   render() {
-    const { top, bottom, left, right } = this.props.position;
+    // const { top, bottom, left, right } = this.props.position;
     // console.log(top, right, left, bottom);
     return ReactDOM.createPortal(
       <div

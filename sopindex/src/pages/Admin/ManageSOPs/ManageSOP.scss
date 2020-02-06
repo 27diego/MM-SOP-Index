@@ -1,0 +1,228 @@
+$color-one: #252525;
+$color-two: #414141;
+$color-three: #af0404;
+$color-four: #ff0000;
+$color-five: #f0ece2;
+
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: $color-one;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  height: 90%;
+  width: 90%;
+  background-color: $color-two;
+  border-radius: 0.5rem;
+  padding: 2rem 3rem;
+}
+
+.addheader {
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+  color: $color-five;
+
+  &__title {
+    padding-bottom: 0.2rem;
+    font-size: 1.5rem;
+  }
+
+  &__problems {
+    font-size: 0.8rem;
+    span {
+      font-size: 0.8rem;
+      color: rgba(#0000ee, 0.7);
+      text-decoration: underline;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.addFiles {
+  width: 100%;
+  height: 20%;
+  margin-bottom: 2rem;
+
+  cursor: initial;
+
+  display: flex;
+
+  &__field {
+    height: 100%;
+    width: 70%;
+    padding: 1rem;
+    color: rgba($color-five, 0.5);
+    border: 1px dashed rgba(white, 0.5);
+    border-radius: 3px;
+    font-size: 0.8rem;
+
+    &:hover {
+      background-color: rgba(darkgrey, 0.5);
+      cursor: default;
+    }
+  }
+
+  &__btnContainer {
+    height: 80%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__btn {
+    height: 60%;
+    width: 60%;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    background-color: #af0404;
+    color: $color-five;
+    border: none;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      transform: translateY(0.05rem);
+    }
+  }
+}
+
+.tab {
+  span {
+    margin-left: 1rem;
+    color: rgba($color-five, 0.5);
+  }
+
+  span:hover {
+    color: rgba($color-five, 1);
+    border-bottom: 2px solid red;
+    padding-bottom: 0.45rem;
+    cursor: pointer;
+  }
+  .tab-active {
+    color: rgba($color-five, 1);
+    border-bottom: 2px solid red;
+    padding-bottom: 0.45rem;
+  }
+
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba($color-five, 0.5);
+}
+
+input,
+label {
+  display: block;
+}
+
+.type {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    width: 30%;
+    height: 100%;
+    // border: solid black 1px;
+    display: block;
+    margin: 0 2rem;
+  }
+
+  &__label {
+    font-size: 0.9rem;
+    color: rgba($color-five, 0.5);
+  }
+
+  &__input {
+    padding: 0 0.7rem;
+    font-size: 0.8rem;
+    width: 100%;
+    height: 43%;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid rgba(#000, 0.7);
+    border-bottom: 3px solid rgba($color-three, 1);
+    box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.4);
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 0.82rem;
+    }
+
+    &:valid {
+      border: 2px solid rgba(#000, 0.7);
+    }
+  }
+  &__dropdown {
+    width: 100%;
+    height: 43%;
+    border-radius: 5px;
+    border: none;
+    border: 2px solid rgba(#000, 0.7);
+    box-shadow: 2px 2px 2rem 0 rgba(0, 0, 0, 0.4);
+    font-size: 0.82rem;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.confirm {
+  height: 18%;
+
+  &__btn {
+    height: 65%;
+    width: 25%;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background-color: $color-three;
+    color: $color-five;
+    border: none;
+    margin-left: 2rem;
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateY(0.05rem);
+    }
+  }
+
+  &__or {
+    margin: 0 1rem;
+    font-size: 0.8rem;
+    color: rgba($color-five, 0.3);
+  }
+
+  &__cancel {
+    font-size: 0.8rem;
+    color: rgba(#0000ee, 0.7);
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
