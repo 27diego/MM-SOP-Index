@@ -145,7 +145,7 @@ class ManageUsers extends Component {
           <span className="aheader__futureLink">Users</span>
           <span className="aheader__admin">{this.state.currentAdmin}</span>
         </div>
-        <div className="content">
+        <div className="Ucontent">
           <div className="panel">
             <h3 className="panel__header">Users</h3>
             <ul className="panel__list">
