@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./Modal.scss";
 import history from "../../history";
+import ManageSOP from "../../pages/Admin/ManageSOPs/ManageSOP";
 
 export default function Modal({ hideModal }) {
   return ReactDOM.createPortal(
@@ -17,6 +18,16 @@ export default function Modal({ hideModal }) {
         />
         <div className="modal__item-header">Manage Users</div>
         <div className="modal__item-description">Add, edit, or drop Users</div>
+      </div>
+      <div onClick={() => history.push("/SOPs")} className="modal__item">
+        <img
+          src="https://img.icons8.com/ios/50/000000/document.png"
+          className="modal__item-logo"
+          alt="users logo"
+        />
+
+        <div className="modal__item-header">Manage SOPs</div>
+        <div className="modal__item-description">Add, edit, or drop SOPs</div>
       </div>
     </div>,
     document.querySelector("#modal")

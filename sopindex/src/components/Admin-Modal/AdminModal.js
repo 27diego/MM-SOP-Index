@@ -1,51 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./AdminModal.scss";
 
-class AdminModal extends React.Component {
-  state = {
+const AdminModal = () => {
+  // const { top, bottom, left, right } = this.props.position;
+  // console.log(top, right, left, bottom);
+
+  const [admin, useAdmin] = useState({
     member: "user",
     admin: "Maritza"
-  };
+  });
 
-  render() {
-    // const { top, bottom, left, right } = this.props.position;
-    // console.log(top, right, left, bottom);
-    return ReactDOM.createPortal(
-      <div
-        className="body"
-        style={{
-          position: "absolute",
-          top: 21,
-          left: 787
-        }}
-      >
-        <div className="option">
-          <div className="option__right">
-            <div className="option__right-header">
-              {this.state.member === "admin"
-                ? this.state.admin === "Maritza"
-                  ? `Remove Admin Rights`
-                  : ""
-                : `Give Admin Rights`}
-            </div>
-            <p className="option__right-description">
-              {this.state.member === "admin"
-                ? this.state.admin === "Maritza"
-                  ? `Remove Admin privileges`
-                  : ""
-                : `Can Manage SOPs and team members`}
-            </p>
+  return ReactDOM.createPortal(
+    <div className="body">
+      <div className="option">
+        <div className="option__right">
+          <div className="option__right-header">
+            {admin.member === "admin"
+              ? admin.admin === "Maritza"
+                ? `Remove Admin Rights`
+                : ""
+              : `Give Admin Rights`}
           </div>
-          <div className="option__remove">
-            <span>Remove user from Team</span>
-          </div>
+          <p className="option__right-description">
+            {admin.member === "admin"
+              ? admin.admin === "Maritza"
+                ? `Remove Admin privileges`
+                : ""
+              : `Can Manage SOPs and team members`}
+          </p>
         </div>
-      </div>,
-      document.querySelector("#admin-modal")
-    );
-  }
-}
+        <div className="option__remove">
+          <span>Remove user from Team</span>
+        </div>
+      </div>
+    </div>,
+    document.querySelector("#admin-modal")
+  );
+};
 
 export default AdminModal;
 
