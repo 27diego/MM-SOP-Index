@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./Dashboard.scss";
 import DepList from "../DepartmentsList/DepList";
 import SOPList from "../SOPList/SOPList";
@@ -9,63 +9,55 @@ import Overlay from "../../../components/Overlay/Overlay";
 
 // import { CSSTransition } from "react-transition-group";
 
-class Dashboard extends Component {
-  state = {
-    Department: "",
-    Doc: "",
-    showModal: false
+const Dashboard = () => {
+  const [Department, UseDepartment] = useState("");
+  const [Document, UseDocument] = useState("");
+  const [ShowModal, UseShowModal] = useState(false);
+
+  const selectDep = name => {
+    UseDepartment({ name });
   };
 
-  selectDep = name => {
-    this.setState({ Department: name });
+  const selectDocument = doc => {
+    UseDocument({ Document: doc });
   };
 
-  selectDocument = doc => {
-    this.setState({ Doc: doc });
+  const hideModal = () => {
+    UseShowModal({ ShowModal: false });
   };
 
-  hideModal = () => {
-    this.setState({ showModal: false });
-  };
-
-  handleModal = () => {
-    this.state.showModal === false
-      ? this.setState({ showModal: true })
-      : this.setState({ showModal: false });
+  const handleModal = () => {
+    ShowModal === false
+      ? UseShowModal({ ShowModal: true })
+      : UseShowModal({ ShowModal: false });
   };
 
   //we need three columns
-  render() {
-    console.log(this.state.showModal);
-    return (
-      <div className="dashboard" style={{ zIndex: 1 }}>
-        <div className="deplist">
-          <DepList
-            selectDep={this.selectDep}
-            handleModal={this.handleModal}
-            modal={this.state.showModal}
-          />
-        </div>
-        <div className="sops">
-          <SOPList
-            Department={this.state.Department}
-            selectDocument={this.selectDocument}
-          />
-        </div>
-        <div className="document">
-          <SOP document={this.state.Doc ? this.state.Doc : 1} />
-        </div>
-        {this.state.showModal === false ? (
-          ""
-        ) : (
-          <div className="mainModal">
-            <Modal hideModal={this.hideModal} />
-            <Overlay hideModal={this.hideModal} />
-          </div>
-        )}
+  return (
+    <div className="dashboard" style={{ zIndex: 1 }}>
+      <div className="deplist">
+        <DepList
+          selectDep={selectDep}
+          handleModal={handleModal}
+          modal={ShowModal}
+        />
       </div>
-    );
-  }
-}
+      <div className="sops">
+        <SOPList Department={Department} selectDocument={selectDocument} />
+      </div>
+      <div className="document">
+        <SOP document={Document ? Document : 1} />
+      </div>
+      {ShowModal === false ? (
+        ""
+      ) : (
+        <div className="mainModal">
+          <Modal hideModal={hideModal} />
+          <Overlay hideModal={hideModal} />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Dashboard;

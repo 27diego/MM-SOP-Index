@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./Modal.scss";
 import history from "../../history";
-import ManageSOP from "../../pages/Admin/ManageSOPs/ManageSOP";
 
 export default function Modal({ hideModal }) {
   return ReactDOM.createPortal(
